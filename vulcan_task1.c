@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
 
 	char second[SIZE];
 	strcpy(second, argv[2]);
+	
+	StringIn(first, second);
+//	printf("%s\n", output);
 	return 0;
 }
 
@@ -57,8 +60,12 @@ void Usage(char *argv[])
 	return;
 }
 
-//char StringIn(char *arg1[], char *arg2[])
-//{
-//	
-//}
+char StringIn(char *arg1[], char *arg2[])
+{
+	int num= (arg2[0]);
+	char output= strchr(arg1, num);
+	return output;
+}
+
+
 
