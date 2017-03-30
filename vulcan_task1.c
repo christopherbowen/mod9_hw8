@@ -21,11 +21,7 @@ int main(int argc, char *argv[])
 {
 	//first check and see if they insert the right amount of parameters
 	//if not call Usage
-	if(strcmp(argv[1], "--help")==0)
-	{
-		Usage(argv);
-	}
-	if(argc != 3)
+	if(strcmp(argv[1], "--help")==0 || argc != 3)
 	{
 		Usage(argv);
 	}
