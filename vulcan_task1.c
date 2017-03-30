@@ -15,7 +15,7 @@
 #define SIZE 81
 /* Function Prototypes */
 void Usage(char *argv[]);
-char StringIn(char *arg1[], char *arg2[]);
+char StringIn(char arg1[], char arg2[]);
 /* Main Program */
 int main(int argc, char *argv[])
 {
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 	strcpy(second, argv[2]);
 	
 	StringIn(first, second);
-//	printf("%s\n", output);
 	return 0;
 }
 
@@ -60,12 +59,42 @@ void Usage(char *argv[])
 	return;
 }
 
-char StringIn(char *arg1[], char *arg2[])
+char StringIn(char arg1[], char arg2[])
 {
 	int num= (arg2[0]);
-	char output= strchr(arg1, num);
-	return output;
+	if(strrchr(arg1, num) == NULL)
+	{
+		printf("<");
+		for(int i =0; i<strlen(arg2);i++)
+		{
+			printf("%c", arg2[i]);
+		}
+		printf("> NOT found in <");
+		for(int j=0; j<strlen(arg1);j++)
+		{
+			printf("%c", arg1[j]);
+		}
+		printf(">\n");
+		printf("Returned string <(null)>\n");
+	}
+	if(strrchr(arg1, num) != NULL)
+	{
+		printf("<");
+		for(int i =0; i<strlen(arg2);i++)
+		{
+			printf("%c", arg2[i]);
+		}
+		printf("> found in <");
+		for(int j=0; j<strlen(arg1);j++)
+		{
+			printf("%c", arg1[j]);
+		}
+		printf(">\n");
+		printf("Returned string <");
+		printf("%s", strchr(arg1, num));
+		printf(">\n");
+	}
+	return arg1[0];
 }
-
 
 
