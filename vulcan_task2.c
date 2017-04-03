@@ -49,6 +49,15 @@ void Usage(char *argv[])
 void GetOptions(char *argv[])
 {
 	int i;
-	for( i =0; *argv[i] != '\0'; i++)
-	if(
+	while(i = 0; *argv[i] != '\0'; i++)
+	if(*argv[] == '-p')
+	{
+		*argv[i] = *argv[i];
+	}
+	else if( *argv[] == '-u')
+	{
+		*argv[i] = toupper(*argv[i]);
+	}
+	else if( *argv[] == '-u')
+		*argv[i] = tolower(*argv[i]);
 }
